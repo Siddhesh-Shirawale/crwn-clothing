@@ -100,3 +100,6 @@ class SignUp extends React.Component {
 }
 
 export default SignUp;
+
+
+
