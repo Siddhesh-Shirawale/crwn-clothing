@@ -4,6 +4,10 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: "Poppins", sans-serif;
         padding: 20px 60px;
+
+        @media screen and (max-width: 800px) {
+            padding: 10px;
+        }
  }
  
     a {
