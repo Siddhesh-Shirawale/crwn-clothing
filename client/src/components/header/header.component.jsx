@@ -4,7 +4,6 @@ import { createStructuredSelector } from "reselect";
 
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
-
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/users.selectors";
 import { signOutStart } from "../../redux/user/user.actions";
@@ -15,9 +14,8 @@ import {
    HeaderContainer,
    LogoContainer,
    OptionsContainer,
-   OptionDiv,
    OptionLink,
-} from "./header.stlyles";
+} from "./header.styles";
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
    <HeaderContainer>
@@ -25,14 +23,12 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
          <Logo className="logo" />
       </LogoContainer>
       <OptionsContainer>
-         <OptionLink to="/shop" className="option">
-            SHOP
-         </OptionLink>
-         <OptionLink to="/shop" className="option">
-            CONTACT
-         </OptionLink>
+         <OptionLink to="/shop">SHOP</OptionLink>
+         <OptionLink to="/shop">CONTACT</OptionLink>
          {currentUser ? (
-            <OptionDiv onClick={signOutStart}>SIGN OUT</OptionDiv>
+            <OptionLink as="div" onClick={signOutStart}>
+               SIGN OUT
+            </OptionLink>
          ) : (
             <OptionLink to="/signin">SIGN IN</OptionLink>
          )}
