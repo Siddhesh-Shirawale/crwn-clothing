@@ -36,6 +36,13 @@ export const HeaderBlockContainer = styled.div`
          width: 12%;
       }
    }
+   @media screen and (max-width: 480px) {
+      width: 22%;
+      font-size: 0.8rem;
+      &:last-child {
+         width: 12%;
+      }
+   }
 `;
 
 export const TotalContainer = styled.div`
